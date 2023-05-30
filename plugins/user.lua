@@ -9,6 +9,7 @@ return {
   --     require("lsp_signature").setup()
   --   end,
   {
+    -- I am adding zk (note taking) cli app
     -- https://github.com/mickael-menu/zk-nvim
     "mickael-menu/zk-nvim",
     config = function()
