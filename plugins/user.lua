@@ -7,41 +7,12 @@ return {
   --   event = "BufRead",
   --   config = function()
   --     require("lsp_signature").setup()
+  
+  -- Preview Markdown in your modern browser with synchronised scrolling and flexible configuration.
   {
       "iamcco/markdown-preview.nvim",
       cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
       ft = { "markdown" },
       build = function() vim.fn["mkdp#util#install"]() end,
   },
-  {
-    -- I am adding zk (note taking) cli app
-    -- https://github.com/mickael-menu/zk-nvim
-    "mickael-menu/zk-nvim",
-    config = function()
-      require("zk").setup({
-        -- can be "telescope", "fzf" or "select" (`vim.ui.select`)
-        -- it's recommended to use "telescope" or "fzf"
-        -- picker = "telescope",
-        lsp = {
-          -- `config` is passed to `vim.lsp.start_client(config)`
-          config = {
-            cmd = { "zk", "lsp" },
-            name = "zk",
-            -- on_attach = ...
-            -- etc, see `:h vim.lsp.start_client()`
-          },
-          -- automatically attach buffers in a zk notebook that match the given filetypes
-          -- auto_attach = {
-          --   enabled = true,
-          --   filetypes = { "markdown" },
-          -- },
-        },
-      })
-    end
-  },
-  -- {
-  --
-  --   'wakatime/vim-wakatime',
-  --
-  -- }
 }
