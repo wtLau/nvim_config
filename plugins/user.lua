@@ -7,7 +7,12 @@ return {
   --   event = "BufRead",
   --   config = function()
   --     require("lsp_signature").setup()
-  --   end,
+  {
+      "iamcco/markdown-preview.nvim",
+      cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
+      ft = { "markdown" },
+      build = function() vim.fn["mkdp#util#install"]() end,
+  },
   {
     -- I am adding zk (note taking) cli app
     -- https://github.com/mickael-menu/zk-nvim
